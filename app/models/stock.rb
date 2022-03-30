@@ -1,5 +1,8 @@
 class Stock < ApplicationRecord
+  has_many :user_stocks
+  has_many :user, through: :user_stocks
 
+  validates :name, :ticker, presence: true
   # self.method_name <- Class Method, it can be used it like Stock.new_lookup
   def self.new_lookup(ticker_symbol)
     client = IEX::Api::Client.new(
@@ -14,5 +17,5 @@ class Stock < ApplicationRecord
       return nil
     end
   end
-  
+
 end
