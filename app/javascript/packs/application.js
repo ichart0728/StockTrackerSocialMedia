@@ -25,4 +25,10 @@ $(document).on('turbolinks:load', function(){
     $('.message .close').on('click', function(){
       $(this).closest('.message').transition('fade');
     });
+
+    var li_target = document.getElementsByClassName('my_portfolio_li');
+    if (li_target[0].classList.contains('active')){
+      var link_target = document.getElementsByClassName('my_portfolio_link');
+      link_target[0].classList.add('active');
+    };
   });
