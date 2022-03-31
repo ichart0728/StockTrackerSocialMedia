@@ -18,4 +18,9 @@ class Stock < ApplicationRecord
     end
   end
 
+  def self.check_db(ticker_symbol)
+    # Don't need Stock before where() since its already in the Stock model
+    where(ticker: ticker_symbol).first
+  end
+
 end
