@@ -10,8 +10,13 @@
           <li class="nav-item my_portfolio_li <%= 'active' if request.path == my_portfolio_path %>">
             <%= link_to 'My Portfolio', my_portfolio_path, class: "nav-link my_portfolio_link" %>
           </li>
+          <li class="nav-item my_portfolio_li <%= 'active' if request.path == friends_path %>">
+            <%= link_to 'Friends', friends_path, class: "nav-link my_portfolio_link" %>
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <%= link_to edit_user_registration_path, class: "nav-link" do %>
+              <%= fa_icon 'edit' %> Edit Profile
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
